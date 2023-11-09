@@ -32,12 +32,12 @@ def clear():
             row[x] = 0
 
 
-def set_pixel(x, y, v = 1):
+def pixel(x, y, v = 1):
     if 0 <= y < _canvas_height and 0 <= x < _canvas_width:
         _canvas[y][x] = v
 
 
-def draw_line(x1, y1, x2, y2, v = 1):
+def line(x1, y1, x2, y2, v = 1):
     dx = abs(x2 - x1)
     dy = abs(y2 - y1)
 
@@ -47,7 +47,7 @@ def draw_line(x1, y1, x2, y2, v = 1):
     err = dx - dy
 
     x, y = x1, y1
-    set_pixel(x, y, v)
+    pixel(x, y, v)
     while not(x == x2 and y == y2):
         e2 = 2 * err
         if e2 > -dy:
@@ -56,7 +56,7 @@ def draw_line(x1, y1, x2, y2, v = 1):
         if e2 < dx:
             err += dx
             y += sy
-        set_pixel(x, y, v)
+        pixel(x, y, v)
 
 
 # def rect(x1, y1, x2, y2, v = 1):
@@ -75,7 +75,7 @@ def draw_line(x1, y1, x2, y2, v = 1):
 #         set_pixel(x2, y, v)
 
 
-def put_text(x, y, text):
+def text(x, y, text):
     x0 = x // 2 * 2
     y0 = y // 4 * 4
 
@@ -123,7 +123,7 @@ if __name__ == '__main__':
 
     bc.resize(40, 40)
     for y in range(0, 40 + 1, 10):
-        bc.draw_line(0, 0, 40, y, 1)
-    bc.put_text(10, 20, "Line drawing")
-    bc.put_text(10, 30, "線を引くデモ")
+        bc.line(0, 0, 40, y, 1)
+    bc.text(10, 20, "Line drawing")
+    bc.text(10, 30, "線を引くデモ")
     bc.show()
