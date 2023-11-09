@@ -20,8 +20,8 @@ bc.text(ORIGIN_X + 4, 4, "y")
 
 # 点の座標を表示
 bc.text(ORIGIN_X + 4, ORIGIN_Y + 4, "0")  # 原点
-bc.text(int(1 * SCALE) + ORIGIN_X, ORIGIN_Y + 4, "1")  # (1, 0)
-bc.text(int(-1 * SCALE) + ORIGIN_X, ORIGIN_Y + 4, "-1")  # (-1, 0)
+bc.text(ORIGIN_X + int(1 * SCALE), ORIGIN_Y + 4, "1")  # (1, 0)
+bc.text(ORIGIN_X + int(-1 * SCALE), ORIGIN_Y + 4, "-1")  # (-1, 0)
 bc.text(ORIGIN_X + 4, ORIGIN_Y + int(-1 * SCALE), "1")  # (0, 1)
 bc.text(ORIGIN_X + 4, ORIGIN_Y + int(1 * SCALE), "-1")  # (0, -1)
 
